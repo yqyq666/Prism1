@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp.Views"
+        mc:Ignorable="d"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid  Grid.Row="1" >
+            <ContentControl prism:RegionManager.RegionName="ModuleContent"/>
+        </Grid>
+        <StackPanel  Orientation="Horizontal"   Grid.Row="2">
+            <Button Width="125" Height="40" Margin="5" Content="主页" Command="{Binding DelegateCommand}" CommandParameter="ViewA"/>
+            <Button Width="125" Height="40" Margin="5" Content="历史记录" Command="{Binding DelegateCommand}" CommandParameter="ViewB"/>
+            <Button Width="125" Height="40" Margin="5" Content="视图C"/>
+            <Button Width="125" Height="40" Margin="5" Content="视图D"/>
+            <Button Width="125" Height="40" Margin="5" Content="视图E"/>
+        </StackPanel>
+    </Grid>
+</Window>
